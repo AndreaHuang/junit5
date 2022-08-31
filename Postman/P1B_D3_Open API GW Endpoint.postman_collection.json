@@ -7,6 +7,18 @@
 	"item": [
 		{
 			"name": "/oauth2/token KWHK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.collectionVariables.set(\"KWHK_TOKEN\",res.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"strictSSL": false
 			},
@@ -854,7 +866,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"DvP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"settlementCurrency\": \"HKD\",\r\n\t     \"settlementAmount\": 1000.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"DvP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"settlementCurrency\": \"HKD\",\r\n\t     \"settlementAmount\": 1000.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1070,7 +1082,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"FoP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"FoP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1306,7 +1318,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"HST\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t       \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t       \"member\": \"HSBC001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t       \"issueNumber\": \"AC-CMUS-A52\"\r\n      },\r\n\t\"currency\": \"HKD\",\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false\r\n      },\r\n\t\"remarks\": [\r\n\t\t\t\"Remarks Line 01\"\r\n     ],\r\n    \"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"participant\": \"{{MEMBER_CODE}}\",\r\n    \"accountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"HST\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t       \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t       \"member\": \"HSBC001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t       \"issueNumber\": \"AC-CMUS-A52\"\r\n      },\r\n\t\"currency\": \"HKD\",\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false\r\n      },\r\n\t\"remarks\": [\r\n\t\t\t\"Remarks Line 01\"\r\n     ],\r\n    \"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -2740,7 +2752,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"DVP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"settlementCurrency\": \"HKD\",\r\n\t     \"settlementAmount\": 1000.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\t\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"DVP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"settlementCurrency\": \"HKD\",\r\n\t     \"settlementAmount\": 1000.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -3427,7 +3439,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"FOP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"FOP\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t    \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t    \"member\": \"KWHK001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t    \"isin\": \"ISINX0000006\"\r\n      },\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false,\r\n\t     \"tradeDate\": \"2022-08-10\",\r\n\t     \"dealPrice\": 1.0000,\r\n\t     \"couponDividendCurrency\": \"HKD\",\r\n\t     \"couponDividendAmount\": 20.00,\r\n\t     \"matchingOnly\": false,\r\n         \"remarks\": [\r\n\t\t\t\"Remarks Line 01\",\r\n\t\t\t\"Remarks Line 02\",\r\n\t\t\t\"Remarks Line 03\",\r\n\t\t\t\"Remarks Line 04\"\r\n\t     ]\r\n      },\t\r\n\t\"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -3563,7 +3575,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"HST\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t       \"member\": \"HSBC000\"\r\n      },\r\n\t\"buyer\": {\r\n\t       \"member\": \"HSBC001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t       \"issueNumber\": \"AC-CMUS-A52\"\r\n      },\r\n\t\"currency\": \"HKD\",\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false\r\n      },\r\n\t\"remarks\": [\r\n\t\t\t\"Remarks Line 01\"\r\n     ],\r\n    \"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"cmuAccountSerialNumber\": \"000\",\r\n\t\"transactionSubGroup\": \"CST\",\r\n\t\"transactionType\": \"HST\",\r\n\t\"trn\": \"{{TRN}}\",\r\n\t\"seller\": {\r\n\t       \"member\": \"{{MEMBER_CODE}}000\"\r\n      },\r\n\t\"buyer\": {\r\n\t       \"member\": \"{{MEMBER_CODE}}001\"\r\n      },\r\n\t\"csdCode\": \"CMU\",\r\n\t\"securities\": {\r\n\t       \"issueNumber\": \"AC-CMUS-A52\"\r\n      },\r\n\t\"currency\": \"HKD\",\r\n\t\"quantity\": 1000,\r\n\t\"settlementDate\": \"2022-09-01\",\r\n\t\"cmuSecXfer\": {\r\n\t     \"centralMatching\": false\r\n      },\r\n\t\"remarks\": [\r\n\t\t\t\"Remarks Line 01\"\r\n     ],\r\n    \"timestamp\":\"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\":\"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -9361,7 +9373,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n     \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020389\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n     \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020460\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -9830,7 +9842,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n\t\"hrn\": \"C01882614\",\r\n\t\"includes\": [\"HISTORY\"],\r\n\t\"timestamp\": \"2021-11-22T10:00:00+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n\t\"hrn\": \"800020460\",\r\n\t\"includes\": [\"HISTORY\"],\r\n\t\"timestamp\": \"2021-11-22T10:00:00+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -11096,7 +11108,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020395\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020462\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -11120,19 +11132,13 @@
 			},
 			"response": [
 				{
-					"name": "503-C0590-Transaction already EOL",
+					"name": "400 - C5090 -Transaction already EOL",
 					"originalRequest": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "CLIENT_ID",
-								"value": "{{CLIENT_ID}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020307\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"trn\": \"{{TRN}}\",\r\n    \"targetHrn\": \"800020462\",\r\n    \"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -11140,12 +11146,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{HOST}}:443/cmuapi/ws/tender_application/cancel/v1",
+							"raw": "https://{{HOST}}/cmuapi/ws/tender_application/cancel/v1",
 							"protocol": "https",
 							"host": [
 								"{{HOST}}"
 							],
-							"port": "443",
 							"path": [
 								"cmuapi",
 								"ws",
@@ -11155,13 +11160,13 @@
 							]
 						}
 					},
-					"status": "Service Unavailable",
-					"code": 503,
+					"status": "Bad Request",
+					"code": 400,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
 							"key": "Date",
-							"value": "Tue, 09 Aug 2022 08:36:32 GMT"
+							"value": "Wed, 31 Aug 2022 06:39:58 GMT"
 						},
 						{
 							"key": "Strict-Transport-Security",
@@ -11170,10 +11175,6 @@
 						{
 							"key": "Strict-Transport-Security",
 							"value": "max-age=31536000 ; includeSubDomains"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Servlet/3.1"
 						},
 						{
 							"key": "Vary",
@@ -11221,7 +11222,7 @@
 						},
 						{
 							"key": "Content-Language",
-							"value": "en-HK"
+							"value": "en-US"
 						}
 					],
 					"cookie": [],
@@ -11236,7 +11237,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n\t\"hrn\": \"C01172035\",\r\n\t\"includes\": [\"HISTORY\"],\r\n\t\"timestamp\": \"2021-11-22T10:00:00+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n\t\"hrn\": \"800020462\",\r\n\t\"includes\": [\"HISTORY\"],\r\n\t\"timestamp\": \"2021-11-22T10:00:00+08:00\",\r\n    \"reqId\": \"{{REQID}}\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -12872,7 +12873,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"pagination\": {\r\n        \"pageSize\": 50\t\t\r\n\t},\r\n\t\"searchCriteria\": {        \r\n        \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n        \"allotmentDateRange\": {\r\n\t\t\t\"from\": \"2022-01-01\",\r\n\t\t\t\"to\": \"2022-01-31\"\r\n\t\t}\r\n\t},\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
+					"raw": "{\r\n\t\"pagination\": {\r\n        \"pageSize\": 50\t\t\r\n\t},\r\n\t\"searchCriteria\": {        \r\n        \"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n        \"allotmentDateRange\": {\r\n\t\t\t\"from\": \"2000-01-01\",\r\n\t\t\t\"to\": \"2022-01-31\"\r\n\t\t}\r\n\t},\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -13660,7 +13661,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"hrn\": \"C01854377\",\r\n    \"includes\": [],\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
+					"raw": "{\r\n\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n    \"hrn\": \"C01211344\",\r\n    \"includes\": [],\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -13896,7 +13897,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"searchCriteria\": {\r\n\t\t\"positionDate\": \"2022-08-17\",\r\n\t\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n        \"issueCurrency\": \"HKD\",\r\n        \"issueGroup\":\"EFCS\",\r\n        \"csdCode\": \"CMU\"\r\n\t},\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
+					"raw": "{\r\n\t\"searchCriteria\": {\r\n\t\t\"positionDate\": \"2022-08-30\",\r\n\t\t\"cmuMemberCode\": \"{{MEMBER_CODE}}\",\r\n        \"issueCurrency\": \"HKD\",\r\n        \"issueGroup\":\"EFCS\",\r\n        \"csdCode\": \"CMU\"\r\n\t},\r\n\t\"timestamp\": \"2021-11-22T10:00:00.999+08:00\",\r\n\t\"reqId\": \"{{REQID}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
